@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3BE81283-D36D-4713-8133-09917088CC6D}</ProjectGuid>
+    <RootNamespace>BoxTicker</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(VCInstallDir)include\improved;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./;./include/improved;./include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>AIE_1st_Year_Framework_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>./libs/</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(OutDir)$(PlatformToolsetVersion).pdb</ProgramDatabaseFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Bullet.h" />
+    <ClInclude Include="include\Collider.h" />
+    <ClInclude Include="include\AIE.h" />
+    <ClInclude Include="include\BoxTicker.h" />
+    <ClInclude Include="include\CustomCursor.h" />
+    <ClInclude Include="include\Enemy.h" />
+    <ClInclude Include="include\Entity.h" />
+    <ClInclude Include="include\Menu.h" />
+    <ClInclude Include="include\Transform.h" />
+    <ClInclude Include="include\Vec2.h" />
+    <ClInclude Include="include\Player.h" />
+    <ClInclude Include="include\Sprite.h" />
+    <ClInclude Include="include\Time.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="libs\AIE_1st_Year_Framework.lib" />
+    <Library Include="libs\AIE_1st_Year_Framework_d.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\Bullet.cpp" />
+    <ClCompile Include="source\CustomCursor.cpp" />
+    <ClCompile Include="source\Enemy.cpp" />
+    <ClCompile Include="source\Menu.cpp" />
+    <ClCompile Include="source\Player.cpp" />
+    <ClCompile Include="source\Collider.cpp" />
+    <ClCompile Include="source\BoxTicker.cpp" />
+    <ClCompile Include="source\Entity.cpp" />
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\Transform.cpp" />
+    <ClCompile Include="source\Vec2.cpp" />
+    <ClCompile Include="source\Sprite.cpp" />
+    <ClCompile Include="source\Time.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\images\img_Bullet_Player_512x512.png" />
+    <Image Include="resources\images\img_Button_Exit_512x512.png" />
+    <Image Include="resources\images\img_Button_HighScores_512x512.png" />
+    <Image Include="resources\images\img_Button_StartGame_512x512.png" />
+    <Image Include="resources\images\img_Cursor_512x512.png" />
+    <Image Include="resources\images\img_Enemy_512x512.png" />
+    <Image Include="resources\images\img_Menu_1024x1024.png" />
+    <Image Include="resources\images\img_Player_512x512.png" />
+    <Image Include="resources\images\img_Splash_1024x1024.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
